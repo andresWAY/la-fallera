@@ -4,18 +4,16 @@
   margin: 0;
 }
 
-html {
-  height: 100%;
-}
-
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  // overflow-x:clip evita el desbordamiento horizontal accidental sin crear
+  // un scrolling container propio en html/body — overflow-x:hidden rompía
+  // position:sticky en toda la página (comportamiento conocido del navegador).
+  overflow-x: clip;
 }
 
 body {
-  min-height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

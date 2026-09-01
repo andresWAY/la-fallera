@@ -1,0 +1,44 @@
+@use "../../../styles/variables" as *;
+
+.footer {
+  position: relative;
+  background: $color-bg-dark;
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 24px;
+  gap: 24px;
+}
+
+.footer__logo {
+  width: 62px;
+  height: auto;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__link {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: $color-text-body;
+}
+
+.footer__imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 869 / 855;
+}
+
+.footer__image {
+  object-fit: cover;
+}
