@@ -1,0 +1,20 @@
+@use "../../../styles/variables" as *;
+
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: none;
+  background: $color-red-cta;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.playButton__icon {
+  width: 36px;
+  height: 36px;
+  fill: $color-white;
+}

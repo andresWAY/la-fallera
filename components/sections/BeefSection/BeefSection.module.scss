@@ -1,0 +1,179 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
+
+// Secuencia de entrada — timings ajustables a ojo, Figma no define motion
+$delay-heading: 0s;
+$delay-intro: 0.5s;
+$delay-names: 0.9s;
+$delay-question: 1.3s;
+$delay-cta: 1.6s;
+
+.beef {
+  position: relative;
+  min-height: 100svh;
+  background: $color-bg-dark;
+  overflow: hidden;
+  padding: 56px 24px;
+}
+
+.beef__bg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.beef__floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.beef__floater {
+  position: absolute;
+  animation: floatPulse 4s ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.beef__floater1 {
+  top: 22%;
+  left: 4%;
+  animation-delay: 0s;
+}
+
+.beef__floater2 {
+  top: 18%;
+  right: 6%;
+  animation-delay: 1s;
+}
+
+.beef__floater3 {
+  top: 62%;
+  left: 22%;
+  animation-delay: 2s;
+}
+
+.beef__floater4 {
+  top: 58%;
+  right: 12%;
+  animation-delay: 0.6s;
+}
+
+.beef__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: calc(100svh - 112px);
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.beef__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.beef__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.beef__heading {
+  font-family: $font-heading;
+  font-weight: 400;
+  color: $color-red-title;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 0.95em;
+  animation: fadeInUp 0.6s ease-out $delay-heading both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.beef__intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: $color-text-body;
+  max-width: 340px;
+  margin-top: 32px;
+  animation: fadeInUp 0.6s ease-out $delay-intro both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.beef__names {
+  font-family: $font-heading;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 0.89em;
+  color: $color-white;
+  margin-top: 16px;
+  animation: fadeInUp 0.6s ease-out $delay-names both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.beef__davidWord,
+.beef__pabloWord {
+  position: relative;
+  display: inline-block;
+}
+
+.beef__rLetter {
+  position: absolute;
+  top: 0.39em;
+  left: 1.5em;
+  color: #e89e17;
+  font-size: 1em;
+  transform: scaleX(-1) rotate(10deg);
+  pointer-events: none;
+}
+
+.beef__ant {
+  position: absolute;
+  top: 0.3em;
+  right: -0.7em;
+  width: 38px;
+  height: auto;
+  pointer-events: none;
+}
+
+.beef__question {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: $color-text-body;
+  margin-top: 40px;
+  animation: fadeInUp 0.6s ease-out $delay-question both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.beef__cta {
+  margin-top: 16px;
+  animation: fadeInUp 0.6s ease-out $delay-cta both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
