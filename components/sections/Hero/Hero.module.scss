@@ -1,0 +1,178 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
+
+// Secuencia de entrada — timings ajustables a ojo, Figma no define motion
+$delay-logo: 0s;
+$delay-presents: 0.4s;
+$delay-title: 0.8s;
+$delay-question-marks: 1.8s;
+$delay-paragraph: 2.4s;
+$delay-ctas: 2.6s;
+$delay-chevrons: 2.8s;
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background: $color-bg-dark;
+}
+
+.hero__bg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 24px 32px;
+  min-height: 100svh;
+  height: 100%;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hero__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__logo {
+  animation: fadeInUp 0.6s ease-out $delay-logo both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__presents {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 15.77px;
+  line-height: 0.89em;
+  text-transform: uppercase;
+  color: $color-white;
+  margin-top: 16px;
+  animation: fadeInUp 0.6s ease-out $delay-presents both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__title {
+  font-family: $font-heading;
+  font-weight: 400;
+  color: $color-red-title;
+  font-size: clamp(48px, 22vw, 120px);
+  line-height: 0.95em;
+  margin-top: 16px;
+  width: 90vw;
+}
+
+.hero__line {
+  display: block;
+  animation: fadeInUp 0.6s ease-out $delay-title both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__paellaWord {
+  position: relative;
+  display: inline-block;
+}
+
+.hero__paellaIcon {
+  position: absolute;
+  top: 0.5em;
+  right: -0.10em;
+  width: 32px;
+  height: 32px;
+  animation: floatY 3s ease-in-out infinite;
+  pointer-events: none;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__impossibleText {
+  display: inline-block;
+}
+
+.hero__questionMark {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out $delay-question-marks both;
+
+  @include reduced-motion {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+.hero__paragraph {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: $color-text-body;
+  max-width: 340px;
+  animation: fadeInUp 0.6s ease-out $delay-paragraph both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  animation: fadeInUp 0.6s ease-out $delay-ctas both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 32px;
+  animation:
+    fadeInUp 0.6s ease-out $delay-chevrons both,
+    bounceDouble 1.5s ease-in-out ($delay-chevrons + 0.6s) infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__chevron1 {
+  width: 36px;
+}
+
+.hero__chevron2 {
+  width: 27px;
+}

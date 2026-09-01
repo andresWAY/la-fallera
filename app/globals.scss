@@ -1,0 +1,8 @@
+@use "../styles/reset";
+@use "../styles/variables" as *;
+
+body {
+  background: $color-bg-dark;
+  color: $color-white;
+  font-family: $font-body;
+}

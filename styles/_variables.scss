@@ -1,0 +1,19 @@
+// Design tokens — confirmados desde Figma
+// fileKey COJstdGF52eeMmGRzbBlvg, nodo 1:2 ("Paella Imosible")
+
+// Colores
+$color-bg-dark: #020202;
+$color-red-title: #a80000;
+$color-red-cta: #8c0000;
+$color-white: #ffffff;
+$color-text-body: #ededed;
+$color-chevron-stroke: #e4e4e4;
+
+// Tipografía — cargadas vía next/font/google en app/layout.tsx,
+// expuestas como custom properties --font-heading / --font-body
+$font-heading: var(--font-heading), sans-serif;
+$font-body: var(--font-body), sans-serif;
+
+// Breakpoints (solo mobile activo por ahora; desktop pendiente)
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
