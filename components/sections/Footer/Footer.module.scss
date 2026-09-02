@@ -1,8 +1,18 @@
 @use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
 
 .footer {
   position: relative;
   background: $color-bg-dark;
+
+  @include breakpoint(desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 64px;
+    overflow: hidden;
+  }
 }
 
 .footer__top {
@@ -11,11 +21,20 @@
   align-items: flex-start;
   padding: 40px 24px;
   gap: 24px;
+
+  @include breakpoint(desktop) {
+    padding: 0;
+    flex: 0 0 auto;
+  }
 }
 
 .footer__logo {
   width: 62px;
   height: auto;
+
+  @include breakpoint(desktop) {
+    width: 82px;
+  }
 }
 
 .footer__links {
@@ -31,14 +50,35 @@
   line-height: 1.2em;
   letter-spacing: -0.02em;
   color: $color-text-body;
+
+  @include breakpoint(desktop) {
+    font-size: 17px;
+  }
 }
 
 .footer__imageWrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 869 / 855;
+
+  @include breakpoint(desktop) {
+    width: 40%;
+    max-width: 500px;
+    flex: 0 0 auto;
+    align-self: flex-end;
+  }
 }
 
 .footer__image {
   object-fit: cover;
+
+  // next/image con `fill` inyecta left/top/right/bottom:0 como estilo
+  // inline en el <img>, que gana sobre cualquier regla de esta hoja de
+  // estilos salvo que se fuerce con !important.
+  @include breakpoint(desktop) {
+    left: 144px !important;
+    top: 138px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
 }

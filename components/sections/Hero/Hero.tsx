@@ -10,7 +10,14 @@ export default function Hero() {
         alt="Mesa con una paella servida entre dos sillas rojas"
         fill
         priority
-        className={styles.hero__bg}
+        className={`${styles.hero__bg} ${styles.hero__bgMobile}`}
+      />
+      <Image
+        src="/images/hero/hero-mesa-paella-desktop.webp"
+        alt="Mesa con una paella servida entre dos sillas rojas"
+        fill
+        priority
+        className={`${styles.hero__bg} ${styles.hero__bgDesktop}`}
       />
 
       <div className={styles.hero__content}>
@@ -38,7 +45,7 @@ export default function Hero() {
                   className={styles.hero__paellaIcon}
                 />
               </span>
-            </span>
+            </span>{" "}
             <span className={styles.hero__line} aria-hidden="true">
               <span className={styles.hero__questionMark}>¿</span>
               <span className={styles.hero__impossibleText}>IMPOSIBLE</span>

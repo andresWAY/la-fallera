@@ -97,6 +97,11 @@ $delay-cta: 1.6s;
   @include reduced-motion {
     animation: none;
   }
+
+  @include breakpoint(desktop) {
+    font-size: clamp(56px, 6vw, 82px);
+    max-width: 900px;
+  }
 }
 
 .beef__intro {
@@ -126,6 +131,10 @@ $delay-cta: 1.6s;
 
   @include reduced-motion {
     animation: none;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: clamp(45px, 5vw, 82px);
   }
 }
 

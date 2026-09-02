@@ -22,6 +22,20 @@ $delay-chevrons: 2.8s;
   z-index: 0;
 }
 
+.hero__bgMobile {
+  @include breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.hero__bgDesktop {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: block;
+  }
+}
+
 .hero__content {
   position: relative;
   z-index: 1;
@@ -79,6 +93,11 @@ $delay-chevrons: 2.8s;
   line-height: 0.95em;
   margin-top: 16px;
   width: 90vw;
+
+  @include breakpoint(desktop) {
+    font-size: clamp(80px, 11vw, 220px);
+    width: 90vw;
+  }
 }
 
 .hero__line {
@@ -87,6 +106,10 @@ $delay-chevrons: 2.8s;
 
   @include reduced-motion {
     animation: none;
+  }
+
+  @include breakpoint(desktop) {
+    display: inline;
   }
 }
 
