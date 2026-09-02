@@ -47,12 +47,14 @@
 .stats__card {
   flex: 0 0 auto;
   width: min(325px, 82vw);
-  height: min(613px, 78svh);
+  height: 613px;
+  max-height: 80svh;
   background: $color-green-title;
   border-radius: 10px;
   padding: 33px 14px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .stats__bigStat {

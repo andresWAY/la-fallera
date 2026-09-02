@@ -63,15 +63,23 @@ export default function StatsSection() {
     recalculate();
     onScroll();
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", () => {
+    const onResize = () => {
       recalculate();
       onScroll();
-    });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    // En iOS Safari, ocultar/mostrar la barra de dirección al hacer scroll
+    // cambia el alto real disponible sin disparar siempre "resize" en window
+    // — visualViewport sí lo refleja, evitando que la altura calculada del
+    // sticky quede desactualizada y el contenido se corte.
+    window.visualViewport?.addEventListener("resize", onResize);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", recalculate);
+      window.removeEventListener("resize", onResize);
+      window.visualViewport?.removeEventListener("resize", onResize);
     };
   }, []);
 
