@@ -74,7 +74,7 @@ $delay-chevrons: 4.6s;
 .hero__title {
   font-family: $font-heading;
   font-weight: 400;
-  color: $color-red-title;
+  color: $color-green-title;
   font-size: clamp(48px, 22vw, 120px);
   line-height: 0.95em;
   margin-top: 16px;
@@ -152,6 +152,13 @@ $delay-chevrons: 4.6s;
   @include reduced-motion {
     animation: none;
   }
+}
+
+.hero__ctaEmoji {
+  display: inline-block;
+  font-size: 1.7em;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 .hero__chevrons {

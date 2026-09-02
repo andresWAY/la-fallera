@@ -188,7 +188,7 @@ export default function StatsSection() {
       </p>
 
       <Button variant="solid" className={styles.stats__cta}>
-        Descargar estudio en PDF
+        Descárgate el estudio
       </Button>
     </section>
   );

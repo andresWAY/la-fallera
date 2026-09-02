@@ -3,23 +3,26 @@
 .button {
   font-family: $font-body;
   font-weight: 700;
-  font-size: 15px;
+  font-size: clamp(11px, 3.8vw, 15px);
   line-height: 1.2em;
-  letter-spacing: -0.01em;
-  padding: 20px 36px;
+  letter-spacing: clamp(-0.02em, -0.01em, -0.01em);
+  text-transform: uppercase;
+  padding: 20px clamp(16px, 6vw, 36px);
   border-radius: 3px;
   border: none;
   cursor: pointer;
-  max-width: 100%;
+  width: 100%;
+  max-width: 340px;
+  white-space: nowrap;
   text-align: center;
 }
 
 .solid {
-  background: $color-red-cta;
+  background: $color-green-cta;
   color: $color-white;
 }
 
 .outline {
   background: $color-white;
-  color: $color-red-cta;
+  color: $color-green-cta;
 }

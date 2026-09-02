@@ -53,7 +53,7 @@ export default function BeefSection() {
           <p className={styles.beef__question}>¿Nos ayudas a conseguirlo?</p>
 
           <Button variant="solid" className={styles.beef__cta}>
-            Inunda Instagram de Paellaemojis
+            Inunda Instagram de <span className={styles.beef__ctaEmoji}>🥘</span>
           </Button>
         </div>
       </div>

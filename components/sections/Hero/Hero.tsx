@@ -54,7 +54,9 @@ export default function Hero() {
           </p>
 
           <div className={styles.hero__ctas}>
-            <Button variant="solid">Inunda Instagram de Paellaemojis</Button>
+            <Button variant="solid">
+              Inunda Instagram de <span className={styles.hero__ctaEmoji}>🥘</span>
+            </Button>
           </div>
 
           <div className={styles.hero__chevrons} aria-hidden="true">
