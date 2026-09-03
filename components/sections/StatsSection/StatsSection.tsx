@@ -208,7 +208,12 @@ export default function StatsSection() {
         65 años.
       </p>
 
-      <Button variant="solid" className={styles.stats__cta}>
+      <Button
+        variant="solid"
+        className={styles.stats__cta}
+        href="/docs/estudio-la-fallera-2026.pdf"
+        download
+      >
         Descárgate el estudio
       </Button>
     </section>
