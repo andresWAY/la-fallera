@@ -170,8 +170,10 @@ $delay-cta: 1.6s;
 
 .beef__bombo {
   position: absolute;
-  top: calc(0.39em + 20px);
-  left: 1.5em;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 6px;
   width: 51px;
   height: auto;
   pointer-events: none;
