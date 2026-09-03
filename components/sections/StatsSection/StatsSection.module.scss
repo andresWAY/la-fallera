@@ -1,5 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
 
 .stats {
   position: relative;
@@ -15,6 +16,20 @@
   line-height: 0.95em;
   text-align: center;
   padding: 0 24px;
+  margin-top: 48px;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  &.stats__headingInView {
+    animation: fadeInUp 0.6s ease-out both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
 }
 
 .stats__sticky {
@@ -87,10 +102,16 @@
   margin-top: 12px;
 }
 
+.stats__pills {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
 .stats__row {
   display: flex;
   gap: 8px;
-  margin-top: 12px;
 }
 
 .stats__pill {

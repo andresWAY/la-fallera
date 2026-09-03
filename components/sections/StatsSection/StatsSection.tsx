@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import Button from "@/components/ui/Button/Button";
+import { useInView } from "@/hooks/useInView";
 import styles from "./StatsSection.module.scss";
 
 export default function StatsSection() {
   const stickyRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const { ref: headingRef, isInView: headingInView } = useInView<HTMLHeadingElement>();
 
   useEffect(() => {
     const sticky = stickyRef.current;
@@ -85,7 +87,12 @@ export default function StatsSection() {
 
   return (
     <section className={styles.stats}>
-      <h2 className={styles.stats__heading}>Hagamos posible la paella imposible</h2>
+      <h2
+        ref={headingRef}
+        className={`${styles.stats__heading} ${headingInView ? styles.stats__headingInView : ""}`}
+      >
+        Hagamos posible la paella imposible
+      </h2>
 
       <div ref={stickyRef} className={styles.stats__sticky}>
         <div ref={viewportRef} className={styles.stats__viewport}>
@@ -96,30 +103,32 @@ export default function StatsSection() {
                 de los españoles opina que compartir una buena paella puede llevar a la gente a
                 reconciliarse tras un conflicto.
               </p>
-              <div className={styles.stats__row}>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>82%</p>
-                  <p className={styles.stats__pillLabel}>Andalucía</p>
+              <div className={styles.stats__pills}>
+                <div className={styles.stats__row}>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>82%</p>
+                    <p className={styles.stats__pillLabel}>Andalucía</p>
+                  </div>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>76%</p>
+                    <p className={styles.stats__pillLabel}>Islas Baleares</p>
+                  </div>
                 </div>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>76%</p>
-                  <p className={styles.stats__pillLabel}>Islas Baleares</p>
+                <div className={styles.stats__row}>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>87%</p>
+                    <p className={styles.stats__pillLabel}>Cataluña</p>
+                  </div>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>81%</p>
+                    <p className={styles.stats__pillLabel}>Comunidad de Madrid</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stats__row}>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>87%</p>
-                  <p className={styles.stats__pillLabel}>Cataluña</p>
-                </div>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>81%</p>
-                  <p className={styles.stats__pillLabel}>Comunidad de Madrid</p>
-                </div>
-              </div>
-              <div className={styles.stats__row}>
-                <div className={`${styles.stats__pill} ${styles.stats__pillFull}`}>
-                  <p className={styles.stats__pillStat}>94%</p>
-                  <p className={styles.stats__pillLabel}>Comunidad Valenciana</p>
+                <div className={styles.stats__row}>
+                  <div className={`${styles.stats__pill} ${styles.stats__pillFull}`}>
+                    <p className={styles.stats__pillStat}>94%</p>
+                    <p className={styles.stats__pillLabel}>Comunidad Valenciana</p>
+                  </div>
                 </div>
               </div>
             </article>
@@ -130,30 +139,32 @@ export default function StatsSection() {
                 de los españoles ha limado asperezas o resuelto conflictos con una paella en la
                 mesa.
               </p>
-              <div className={styles.stats__row}>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>67%</p>
-                  <p className={styles.stats__pillLabel}>18 a 24 años</p>
+              <div className={styles.stats__pills}>
+                <div className={styles.stats__row}>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>67%</p>
+                    <p className={styles.stats__pillLabel}>18 a 24 años</p>
+                  </div>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>62%</p>
+                    <p className={styles.stats__pillLabel}>25 a 34 años</p>
+                  </div>
                 </div>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>62%</p>
-                  <p className={styles.stats__pillLabel}>25 a 34 años</p>
+                <div className={styles.stats__row}>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>53%</p>
+                    <p className={styles.stats__pillLabel}>35 a 44 años</p>
+                  </div>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>53%</p>
+                    <p className={styles.stats__pillLabel}>45 a 54 años</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.stats__row}>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>53%</p>
-                  <p className={styles.stats__pillLabel}>35 a 44 años</p>
-                </div>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>53%</p>
-                  <p className={styles.stats__pillLabel}>45 a 54 años</p>
-                </div>
-              </div>
-              <div className={styles.stats__row}>
-                <div className={`${styles.stats__pill} ${styles.stats__pillFull}`}>
-                  <p className={styles.stats__pillStat}>44%</p>
-                  <p className={styles.stats__pillLabel}>55 a 65 años</p>
+                <div className={styles.stats__row}>
+                  <div className={`${styles.stats__pill} ${styles.stats__pillFull}`}>
+                    <p className={styles.stats__pillStat}>44%</p>
+                    <p className={styles.stats__pillLabel}>55 a 65 años</p>
+                  </div>
                 </div>
               </div>
             </article>
@@ -164,24 +175,26 @@ export default function StatsSection() {
                 de los españoles lo ha pasado bien con gente que piensa distinto mientras comían
                 una paella, independientemente de sus gustos.
               </p>
-              <div className={styles.stats__row}>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>90%</p>
-                  <p className={styles.stats__pillLabel}>ve El Hormiguero</p>
+              <div className={styles.stats__pills}>
+                <div className={styles.stats__row}>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>90%</p>
+                    <p className={styles.stats__pillLabel}>ve El Hormiguero</p>
+                  </div>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>88%</p>
+                    <p className={styles.stats__pillLabel}>ve La Revuelta</p>
+                  </div>
                 </div>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>88%</p>
-                  <p className={styles.stats__pillLabel}>ve La Revuelta</p>
-                </div>
-              </div>
-              <div className={styles.stats__row}>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>88%</p>
-                  <p className={styles.stats__pillLabel}>ve El Intermedio</p>
-                </div>
-                <div className={styles.stats__pill}>
-                  <p className={styles.stats__pillStat}>90%</p>
-                  <p className={styles.stats__pillLabel}>ve First Dates</p>
+                <div className={styles.stats__row}>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>88%</p>
+                    <p className={styles.stats__pillLabel}>ve El Intermedio</p>
+                  </div>
+                  <div className={styles.stats__pill}>
+                    <p className={styles.stats__pillStat}>90%</p>
+                    <p className={styles.stats__pillLabel}>ve First Dates</p>
+                  </div>
                 </div>
               </div>
             </article>

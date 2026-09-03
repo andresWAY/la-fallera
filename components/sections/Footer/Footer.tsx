@@ -5,22 +5,39 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__top}>
-        <Image
-          src="/images/hero/logo-la-fallera.svg"
-          alt="La Fallera"
-          width={62}
-          height={64}
-          className={styles.footer__logo}
-        />
+        <a href="https://www.lafallera.es/" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/images/hero/logo-la-fallera.svg"
+            alt="La Fallera"
+            width={62}
+            height={64}
+            className={styles.footer__logo}
+          />
+        </a>
 
         <nav className={styles.footer__links} aria-label="Enlaces legales">
-          <a href="#" className={styles.footer__link}>
+          <a
+            href="https://www.lafallera.es/politica-de-privacidad/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.footer__link}
+          >
             Política de privacidad
           </a>
-          <a href="#" className={styles.footer__link}>
+          <a
+            href="https://www.lafallera.es/aviso-legal/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.footer__link}
+          >
             Aviso legal
           </a>
-          <a href="#" className={styles.footer__link}>
+          <a
+            href="https://www.lafallera.es/politica-de-cookies/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.footer__link}
+          >
             Política de cookies
           </a>
         </nav>

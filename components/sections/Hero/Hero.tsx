@@ -22,14 +22,16 @@ export default function Hero() {
 
       <div className={styles.hero__content}>
         <div className={styles.hero__top}>
-          <Image
-            src="/images/hero/logo-la-fallera.svg"
-            alt="La Fallera"
-            width={62}
-            height={64}
-            className={styles.hero__logo}
-            priority
-          />
+          <a href="https://www.lafallera.es/" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/images/hero/logo-la-fallera.svg"
+              alt="La Fallera"
+              width={62}
+              height={64}
+              className={styles.hero__logo}
+              priority
+            />
+          </a>
 
           <p className={styles.hero__presents}>PRESENTA</p>
 

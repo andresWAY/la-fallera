@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Button from "@/components/ui/Button/Button";
+import { useInView } from "@/hooks/useInView";
 import styles from "./BeefSection.module.scss";
 
 // TODO: sustituir la imagen de fondo por un vídeo en bucle cuando el usuario lo entregue.
 export default function BeefSection() {
+  const { ref, isInView } = useInView<HTMLElement>();
+
   return (
-    <section className={styles.beef}>
+    <section ref={ref} className={`${styles.beef} ${isInView ? styles.beef__inView : ""}`}>
       <Image
         src="/images/beef/fondo-beef.webp"
         alt="Paella servida en la mesa"
@@ -33,7 +38,13 @@ export default function BeefSection() {
           <p className={styles.beef__names} aria-label="David y Pablo">
             <span className={styles.beef__davidWord} aria-hidden="true">
               DAVID
-              <span className={styles.beef__rLetter}>R</span>
+              <Image
+                src="/images/beef/bombo-bandera.webp"
+                alt=""
+                width={51}
+                height={37}
+                className={styles.beef__bombo}
+              />
             </span>{" "}
             <span aria-hidden="true">Y</span>{" "}
             <span className={styles.beef__pabloWord} aria-hidden="true">
