@@ -10,7 +10,7 @@ export default function StatsSection() {
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const { ref: headingRef, isInView: headingInView } = useInView<HTMLHeadingElement>();
-  const { ref: cardsRef, isInView: cardsInView } = useInView<HTMLElement>(0.15);
+  const { ref: cardsRef, isInView: cardsInView } = useInView<HTMLDivElement>(0);
   const { ref: outroRef, isInView: outroInView } = useInView<HTMLDivElement>(0.3);
 
   useEffect(() => {
@@ -88,13 +88,18 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={cardsRef} className={styles.stats}>
+    <section className={styles.stats}>
       <h2
         ref={headingRef}
         className={`${styles.stats__heading} ${headingInView ? styles.stats__headingInView : ""}`}
       >
         Hagamos posible la paella imposible
       </h2>
+
+      {/* Marcador de altura cero justo donde empieza la zona sticky: dispara
+          la animación cuando las tarjetas entran de verdad en pantalla, no
+          cuando lo hace la sección entera (que empieza mucho antes). */}
+      <div ref={cardsRef} className={styles.stats__cardsTrigger} aria-hidden="true" />
 
       <div
         ref={stickyRef}

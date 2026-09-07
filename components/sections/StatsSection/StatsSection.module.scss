@@ -32,9 +32,18 @@
   }
 }
 
+// Marcador invisible que dispara la animación de las tarjetas. Se sitúa
+// donde arranca la zona sticky, con un pequeño offset para que la entrada
+// empiece justo cuando las tarjetas asoman en pantalla.
+.stats__cardsTrigger {
+  height: 0;
+  margin-top: 40vh;
+  pointer-events: none;
+}
+
 .stats__sticky {
   position: relative;
-  margin-top: 16px;
+  margin-top: calc(16px - 40vh);
 }
 
 .stats__sticky > .stats__viewport {
