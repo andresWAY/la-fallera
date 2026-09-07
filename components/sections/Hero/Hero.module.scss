@@ -202,13 +202,14 @@ $delay-chevrons: 2.1s;
   font-family: $font-heading;
   font-weight: 400;
   color: $color-green-title;
-  font-size: clamp(48px, 22vw, 120px);
+  font-size: clamp(42px, 19.5vw, 106px);
   line-height: 0.95em;
-  margin-top: 16px;
+  margin-top: 24px;
+  margin-bottom: 8px;
   width: 90vw;
 
   @include breakpoint(desktop) {
-    font-size: clamp(80px, 11vw, 220px);
+    font-size: clamp(70px, 9.7vw, 194px);
     width: 90vw;
   }
 }
