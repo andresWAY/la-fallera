@@ -245,11 +245,13 @@ $delay-chevrons: 2.1s;
 .hero__paragraph {
   font-family: $font-body;
   font-weight: 400;
-  font-size: 14px;
+  // En pantallas muy estrechas (~320px) baja lo justo para que la pregunta
+  // quepa entera en una sola línea, como pide el copy.
+  font-size: clamp(12px, 3.7vw, 14px);
   line-height: 1.2em;
   letter-spacing: -0.02em;
   color: $color-text-body;
-  max-width: 340px;
+  max-width: 360px;
   animation: fadeInUp 0.6s ease-out $delay-paragraph both;
 
   @include reduced-motion {

@@ -63,7 +63,8 @@ export default function Hero() {
 
         <div className={styles.hero__bottom}>
           <p className={styles.hero__paragraph}>
-            Hace 10 años conseguimos juntos el PaellaEmoji.{" "}
+            Hace 10 años conseguimos juntos el PaellaEmoji.
+            <br />
             <strong>¿Y si ahora lo usamos para unir a David y Pablo?</strong>
           </p>
 
