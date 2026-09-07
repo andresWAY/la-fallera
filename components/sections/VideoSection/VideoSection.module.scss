@@ -47,15 +47,17 @@
 .videoSection__floater2 {
   top: 30%;
   right: 14%;
-  animation-delay: 3.1s;
-  animation-duration: 7.4s;
+  animation-name: floatPulseAlt;
+  animation-delay: 4.3s;
+  animation-duration: 12.2s;
 }
 
 .videoSection__floater3 {
   bottom: 16%;
   left: 20%;
-  animation-delay: 1.6s;
-  animation-duration: 9.1s;
+  animation-name: floatPulseAlt2;
+  animation-delay: 2.1s;
+  animation-duration: 10.6s;
 }
 
 .videoSection__frame {

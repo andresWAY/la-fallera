@@ -40,30 +40,32 @@ $delay-cta: 1.6s;
 
 .beef__floater1 {
   top: 22%;
-  left: 4%;
+  left: 7%;
   animation-delay: 0s;
   animation-duration: 8.5s;
 }
 
 .beef__floater2 {
   top: 18%;
-  right: 6%;
-  animation-delay: 2.4s;
-  animation-duration: 7.2s;
+  right: 9%;
+  animation-name: floatPulseAlt;
+  animation-delay: 3.4s;
+  animation-duration: 12.7s;
 }
 
 .beef__floater3 {
   top: 62%;
   left: 22%;
-  animation-delay: 4.1s;
-  animation-duration: 9.3s;
+  animation-name: floatPulseAlt2;
+  animation-delay: 5.9s;
+  animation-duration: 10.1s;
 }
 
 .beef__floater4 {
   top: 58%;
-  right: 12%;
+  right: 14%;
   animation-delay: 1.3s;
-  animation-duration: 7.8s;
+  animation-duration: 14.3s;
 }
 
 .beef__content {

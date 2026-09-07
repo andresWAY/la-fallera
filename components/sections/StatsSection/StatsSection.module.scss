@@ -184,6 +184,7 @@
 
 .stats__outro {
   opacity: 0;
+  text-align: center;
 
   @include reduced-motion {
     opacity: 1;
@@ -213,6 +214,10 @@
 }
 
 .stats__cta {
-  display: block;
-  margin: 16px auto 0;
+  // inline-flex (no block) para que respete el ancho del contenido; con
+  // display:block y width:auto el botón se estiraría a todo el ancho.
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
 }

@@ -73,7 +73,7 @@
 .footer__imageWrapper {
   display: flex;
   justify-content: center;
-  padding: 8px 24px 56px;
+  padding: 24px 24px 96px;
 
   @include breakpoint(desktop) {
     flex: 0 0 auto;
@@ -84,11 +84,6 @@
 .footer__image {
   width: 120px;
   height: auto;
-  animation: floatPulse 8s ease-in-out infinite;
-
-  @include reduced-motion {
-    animation: none;
-  }
 
   @include breakpoint(desktop) {
     width: 160px;

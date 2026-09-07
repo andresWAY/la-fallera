@@ -54,40 +54,45 @@ $delay-chevrons: 2.1s;
 }
 
 // Posiciones fuera de la banda vertical del H1 (aprox. 18%-42%) para no
-// tapar el titular.
+// tapar el titular. Los márgenes laterales dejan holgura para el recorrido
+// horizontal de la animación, que si no recortaría los emojis en el borde.
 .hero__floater1 {
-  top: 9%;
-  left: 6%;
+  top: 11%;
+  left: 9%;
   animation-delay: 0s;
   animation-duration: 8.6s;
 }
 
 .hero__floater2 {
   top: 48%;
-  left: 3%;
+  left: 8%;
+  animation-name: floatPulseAlt;
   animation-delay: 2.7s;
-  animation-duration: 7.5s;
+  animation-duration: 11.3s;
 }
 
 .hero__floater3 {
   top: 52%;
-  right: 5%;
+  right: 9%;
+  animation-name: floatPulseAlt2;
   animation-delay: 1.2s;
   animation-duration: 9.2s;
 }
 
 .hero__floater4 {
   top: 68%;
-  left: 12%;
-  animation-delay: 3.9s;
-  animation-duration: 8.1s;
+  left: 14%;
+  animation-name: floatPulseAlt;
+  animation-delay: 4.6s;
+  animation-duration: 13.1s;
 }
 
 .hero__floater5 {
   top: 12%;
-  right: 9%;
-  animation-delay: 5.2s;
-  animation-duration: 7.9s;
+  right: 11%;
+  animation-name: floatPulseAlt2;
+  animation-delay: 6.8s;
+  animation-duration: 10.4s;
 }
 
 .hero__content {
