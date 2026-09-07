@@ -39,10 +39,10 @@ export default function BeefSection() {
             <span className={styles.beef__davidWord} aria-hidden="true">
               DAVID
               <Image
-                src="/images/beef/bombo-bandera.webp"
+                src="/images/beef/bombo.webp"
                 alt=""
-                width={51}
-                height={37}
+                width={44}
+                height={43}
                 className={styles.beef__bombo}
               />
             </span>{" "}
