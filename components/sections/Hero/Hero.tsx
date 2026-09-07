@@ -45,16 +45,7 @@ export default function Hero() {
 
           <h1 className={styles.hero__title} aria-label="LA PAELLA ¿IMPOSIBLE?">
             <span className={styles.hero__line} aria-hidden="true">
-              <span className={styles.hero__paellaWord}>
-                LA PAELLA
-                <Image
-                  src="/images/hero/icono-paella.webp"
-                  alt=""
-                  width={32}
-                  height={32}
-                  className={styles.hero__paellaIcon}
-                />
-              </span>
+              LA PAELLA
             </span>{" "}
             <span className={styles.hero__line} aria-hidden="true">
               <span className={styles.hero__questionMark}>¿</span>

@@ -183,25 +183,6 @@ $delay-chevrons: 2.1s;
   }
 }
 
-.hero__paellaWord {
-  position: relative;
-  display: inline-block;
-}
-
-.hero__paellaIcon {
-  position: absolute;
-  top: 0.5em;
-  right: -0.10em;
-  width: 32px;
-  height: 32px;
-  animation: floatY 3s ease-in-out infinite;
-  pointer-events: none;
-
-  @include reduced-motion {
-    animation: none;
-  }
-}
-
 .hero__impossibleText {
   display: inline-block;
 }
