@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useInView } from "@/hooks/useInView";
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
+  const { ref, isInView } = useInView<HTMLElement>();
+
   return (
-    <footer className={styles.footer}>
+    <footer ref={ref} className={`${styles.footer} ${isInView ? styles.footer__inView : ""}`}>
       <div className={styles.footer__top}>
         <a href="https://www.lafallera.es/" target="_blank" rel="noopener noreferrer">
           <Image
@@ -45,9 +50,10 @@ export default function Footer() {
 
       <div className={styles.footer__imageWrapper}>
         <Image
-          src="/images/footer/paella-footer.webp"
-          alt="Paella servida en una sartén"
-          fill
+          src="/images/hero/icono-paella.webp"
+          alt=""
+          width={160}
+          height={160}
           className={styles.footer__image}
         />
       </div>

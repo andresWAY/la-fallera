@@ -20,6 +20,14 @@ export default function Hero() {
         className={`${styles.hero__bg} ${styles.hero__bgDesktop}`}
       />
 
+      <div className={styles.hero__floaters} aria-hidden="true">
+        <Image src="/images/hero/icono-paella.webp" alt="" width={30} height={30} className={`${styles.hero__floater} ${styles.hero__floater1}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={38} height={38} className={`${styles.hero__floater} ${styles.hero__floater2}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={34} height={34} className={`${styles.hero__floater} ${styles.hero__floater3}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={42} height={42} className={`${styles.hero__floater} ${styles.hero__floater4}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={28} height={28} className={`${styles.hero__floater} ${styles.hero__floater5}`} />
+      </div>
+
       <div className={styles.hero__content}>
         <div className={styles.hero__top}>
           <a href="https://www.lafallera.es/" target="_blank" rel="noopener noreferrer">
@@ -58,14 +66,12 @@ export default function Hero() {
 
         <div className={styles.hero__bottom}>
           <p className={styles.hero__paragraph}>
-            Hace 10 años conseguimos juntos el <strong>paellaemoji</strong>.
-            ¿Y si ahora lo usamos para unir a David y Pablo?
+            Hace 10 años conseguimos juntos el PaellaEmoji.{" "}
+            <strong>¿Y si ahora lo usamos para unir a David y Pablo?</strong>
           </p>
 
           <div className={styles.hero__ctas}>
-            <Button variant="solid">
-              Inunda Instagram de <span className={styles.hero__ctaEmoji}>🥘</span>
-            </Button>
+            <Button variant="solid">Inunda Instagram de Paellaemojis</Button>
           </div>
 
           <div className={styles.hero__chevrons} aria-hidden="true">

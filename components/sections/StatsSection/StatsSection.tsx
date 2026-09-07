@@ -10,6 +10,8 @@ export default function StatsSection() {
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const { ref: headingRef, isInView: headingInView } = useInView<HTMLHeadingElement>();
+  const { ref: cardsRef, isInView: cardsInView } = useInView<HTMLElement>(0.15);
+  const { ref: outroRef, isInView: outroInView } = useInView<HTMLDivElement>(0.3);
 
   useEffect(() => {
     const sticky = stickyRef.current;
@@ -86,7 +88,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section className={styles.stats}>
+    <section ref={cardsRef} className={styles.stats}>
       <h2
         ref={headingRef}
         className={`${styles.stats__heading} ${headingInView ? styles.stats__headingInView : ""}`}
@@ -94,7 +96,10 @@ export default function StatsSection() {
         Hagamos posible la paella imposible
       </h2>
 
-      <div ref={stickyRef} className={styles.stats__sticky}>
+      <div
+        ref={stickyRef}
+        className={`${styles.stats__sticky} ${cardsInView ? styles.stats__cardsInView : ""}`}
+      >
         <div ref={viewportRef} className={styles.stats__viewport}>
           <div ref={trackRef} className={styles.stats__track}>
             <article className={styles.stats__card}>
@@ -202,20 +207,25 @@ export default function StatsSection() {
         </div>
       </div>
 
-      <p className={styles.stats__disclaimer}>
-        Datos extraídos de &ldquo;La Paella, el plato que une a todos los españoles&rdquo; un
-        estudio impulsado por arroz La Fallera a través de una muestra de 1000 personas entre 18 y
-        65 años.
-      </p>
-
-      <Button
-        variant="solid"
-        className={styles.stats__cta}
-        href="/docs/estudio-la-fallera-2026.pdf"
-        download
+      <div
+        ref={outroRef}
+        className={`${styles.stats__outro} ${outroInView ? styles.stats__outroInView : ""}`}
       >
-        Descárgate el estudio
-      </Button>
+        <p className={styles.stats__disclaimer}>
+          Datos extraídos de &ldquo;La Paella, el plato que une a todos los españoles&rdquo;, un
+          estudio impulsado por arroz La Fallera a través de una muestra de 1000 personas entre 18
+          y 65 años.
+        </p>
+
+        <Button
+          variant="solid"
+          className={styles.stats__cta}
+          href="/docs/estudio-la-fallera-2026.pdf"
+          download
+        >
+          Descárgate el estudio
+        </Button>
+      </div>
     </section>
   );
 }

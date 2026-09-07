@@ -91,6 +91,19 @@
   color: $color-white;
   font-size: clamp(72px, 24vw, 118px);
   line-height: 1em;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  .stats__cardsInView & {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
 }
 
 .stats__bigText {
@@ -100,6 +113,19 @@
   font-size: 24px;
   line-height: 0.95em;
   margin-top: 12px;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  .stats__cardsInView & {
+    animation: fadeInUp 0.6s ease-out 0.25s both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
 }
 
 .stats__pills {
@@ -107,6 +133,19 @@
   flex-direction: column;
   gap: 12px;
   margin-top: auto;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  .stats__cardsInView & {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
 }
 
 .stats__row {
@@ -141,6 +180,22 @@
   letter-spacing: -0.02em;
   color: $color-text-body;
   margin-top: 4px;
+}
+
+.stats__outro {
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  &.stats__outroInView {
+    animation: fadeInUp 0.6s ease-out both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
 }
 
 .stats__disclaimer {

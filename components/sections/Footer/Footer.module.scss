@@ -1,5 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
 
 .footer {
   position: relative;
@@ -21,10 +22,23 @@
   align-items: flex-start;
   padding: 40px 24px;
   gap: 24px;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
 
   @include breakpoint(desktop) {
     padding: 0;
     flex: 0 0 auto;
+  }
+
+  .footer__inView & {
+    animation: fadeInUp 0.6s ease-out both;
+
+    @include reduced-motion {
+      animation: none;
+    }
   }
 }
 
@@ -57,28 +71,26 @@
 }
 
 .footer__imageWrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 869 / 855;
+  display: flex;
+  justify-content: center;
+  padding: 8px 24px 56px;
 
   @include breakpoint(desktop) {
-    width: 40%;
-    max-width: 500px;
     flex: 0 0 auto;
-    align-self: flex-end;
+    padding: 0 24px;
   }
 }
 
 .footer__image {
-  object-fit: cover;
+  width: 120px;
+  height: auto;
+  animation: floatPulse 8s ease-in-out infinite;
 
-  // next/image con `fill` inyecta left/top/right/bottom:0 como estilo
-  // inline en el <img>, que gana sobre cualquier regla de esta hoja de
-  // estilos salvo que se fuerce con !important.
+  @include reduced-motion {
+    animation: none;
+  }
+
   @include breakpoint(desktop) {
-    left: 144px !important;
-    top: 138px !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    width: 160px;
   }
 }
