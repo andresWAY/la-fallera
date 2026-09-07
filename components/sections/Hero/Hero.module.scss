@@ -102,6 +102,49 @@ $delay-chevrons: 2.1s;
   animation-duration: 10.4s;
 }
 
+// Emojis extra solo en desktop: en móvil no hay espacio lateral libre y
+// recargarían la composición.
+.hero__floaterDesktop {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: block;
+  }
+}
+
+// El H1 en desktop ocupa del 23% al 40% de alto y casi todo el ancho, así
+// que estos quedan por encima y por debajo de esa banda.
+.hero__floater6 {
+  top: 14%;
+  left: 22%;
+  animation-name: floatPulseAlt;
+  animation-delay: 1.9s;
+  animation-duration: 11.8s;
+}
+
+.hero__floater7 {
+  top: 47%;
+  right: 26%;
+  animation-delay: 5.4s;
+  animation-duration: 9.7s;
+}
+
+.hero__floater8 {
+  top: 78%;
+  right: 18%;
+  animation-name: floatPulseAlt2;
+  animation-delay: 3.2s;
+  animation-duration: 13.6s;
+}
+
+.hero__floater9 {
+  top: 62%;
+  left: 26%;
+  animation-name: floatPulseAlt;
+  animation-delay: 7.5s;
+  animation-duration: 10.9s;
+}
+
 .hero__content {
   position: relative;
   z-index: 1;

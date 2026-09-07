@@ -26,6 +26,12 @@ export default function Hero() {
         <Image src="/images/hero/icono-paella.webp" alt="" width={34} height={34} className={`${styles.hero__floater} ${styles.hero__floater3}`} />
         <Image src="/images/hero/icono-paella.webp" alt="" width={42} height={42} className={`${styles.hero__floater} ${styles.hero__floater4}`} />
         <Image src="/images/hero/icono-paella.webp" alt="" width={28} height={28} className={`${styles.hero__floater} ${styles.hero__floater5}`} />
+
+        {/* Solo desktop: aprovechan el espacio lateral que en móvil no existe. */}
+        <Image src="/images/hero/icono-paella.webp" alt="" width={36} height={36} className={`${styles.hero__floater} ${styles.hero__floaterDesktop} ${styles.hero__floater6}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={30} height={30} className={`${styles.hero__floater} ${styles.hero__floaterDesktop} ${styles.hero__floater7}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={44} height={44} className={`${styles.hero__floater} ${styles.hero__floaterDesktop} ${styles.hero__floater8}`} />
+        <Image src="/images/hero/icono-paella.webp" alt="" width={32} height={32} className={`${styles.hero__floater} ${styles.hero__floaterDesktop} ${styles.hero__floater9}`} />
       </div>
 
       <div className={styles.hero__content}>
