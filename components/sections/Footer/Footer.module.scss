@@ -5,13 +5,14 @@
 .footer {
   position: relative;
   background: $color-bg-dark;
+  padding-bottom: 96px;
 
   @include breakpoint(desktop) {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    padding: 0 64px;
+    padding: 0 64px 120px;
     overflow: hidden;
   }
 }
@@ -73,7 +74,7 @@
 .footer__imageWrapper {
   display: flex;
   justify-content: center;
-  padding: 24px 24px 96px;
+  padding: 24px;
 
   @include breakpoint(desktop) {
     flex: 0 0 auto;

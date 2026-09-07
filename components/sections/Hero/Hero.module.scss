@@ -46,7 +46,14 @@ $delay-chevrons: 2.1s;
 
 .hero__floater {
   position: absolute;
+  // Amplitud reducida en móvil: el mismo crecimiento se ve desproporcionado
+  // en pantalla estrecha.
+  --float-amp: 0.5;
   animation: floatPulse 8s ease-in-out infinite;
+
+  @include breakpoint(desktop) {
+    --float-amp: 1;
+  }
 
   @include reduced-motion {
     animation: none;
