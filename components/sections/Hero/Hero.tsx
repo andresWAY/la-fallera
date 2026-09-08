@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button/Button";
+import InstagramButton from "@/components/ui/InstagramButton/InstagramButton";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
@@ -69,7 +69,7 @@ export default function Hero() {
           </p>
 
           <div className={styles.hero__ctas}>
-            <Button variant="solid">Inunda Instagram de Paellaemojis</Button>
+            <InstagramButton>Inunda Instagram de Paellaemojis</InstagramButton>
           </div>
 
           <div className={styles.hero__chevrons} aria-hidden="true">

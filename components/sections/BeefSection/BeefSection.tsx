@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/ui/Button/Button";
+import InstagramButton from "@/components/ui/InstagramButton/InstagramButton";
 import { useInView } from "@/hooks/useInView";
 import styles from "./BeefSection.module.scss";
 
@@ -63,9 +63,9 @@ export default function BeefSection() {
         <div className={styles.beef__bottom}>
           <p className={styles.beef__question}>¿Nos ayudas a conseguirlo?</p>
 
-          <Button variant="solid" className={styles.beef__cta}>
+          <InstagramButton className={styles.beef__cta}>
             Inunda Instagram de Paellaemojis
-          </Button>
+          </InstagramButton>
         </div>
       </div>
     </section>
