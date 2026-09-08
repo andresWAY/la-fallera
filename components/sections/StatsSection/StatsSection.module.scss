@@ -83,10 +83,15 @@
   max-height: 80svh;
   background: $color-green-title;
   border-radius: 10px;
-  padding: 33px 14px;
+  // El padding baja un poco en pantallas muy estrechas para que el
+  // contenido quepa entero sin recortarse.
+  padding: clamp(24px, 8vw, 33px) 14px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  // Sin overflow-y:auto: el contenido cabe de sobra y solo desbordaba por
+  // ~2px en pantallas muy estrechas, pero el navegador pintaba la barra de
+  // scroll igualmente y en móvil interfería con el gesto de deslizar.
+  overflow: hidden;
 
   @include breakpoint(desktop) {
     width: 340px;
