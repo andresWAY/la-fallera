@@ -1,10 +1,17 @@
 import InstagramEmbed from "@/components/ui/InstagramEmbed/InstagramEmbed";
 import styles from "./InfluencersSection.module.scss";
 
-// TODO: sustituir por las URLs reales de los posts/reels de los influencers
-// en cuanto el usuario las entregue. Formato: https://www.instagram.com/p/XXXXX/
-// o https://www.instagram.com/reel/XXXXX/
-const INFLUENCER_POST_URLS: string[] = [];
+// Piezas de los influencers, en orden inverso al que las fue pasando el
+// cliente (de la más antigua a la más reciente de su lista).
+// Se irán añadiendo más conforme se publiquen.
+const INFLUENCER_POST_URLS: string[] = [
+  "https://www.instagram.com/p/DdEXDMEspNM/", // javihoyosmartinez
+  "https://www.instagram.com/p/DdEersegIC6/", // albacarrillooficial
+  "https://www.instagram.com/p/DdEeum6sFkk/", // celimonde
+  "https://www.instagram.com/p/DdEfNfTIqLu/", // jacobocabezass
+  "https://www.instagram.com/p/DdG43DONR_3/", // sieira10
+  "https://www.instagram.com/p/DdHJHWVC1CI/", // vdebonitos
+];
 
 export default function InfluencersSection() {
   if (INFLUENCER_POST_URLS.length === 0) {
