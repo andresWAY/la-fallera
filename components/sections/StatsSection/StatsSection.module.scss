@@ -33,6 +33,21 @@
   }
 }
 
+// Titulares largos (la frase de cierre de la v2 tiene 13 palabras frente a
+// las 4 de "Hagamos posible la paella imposible"): al tamaño por defecto
+// ocupaban media pantalla. Igualado al de los bloques de texto de la v2
+// para que toda la página mantenga una sola escala tipográfica.
+.stats__headingLong {
+  font-size: clamp(32px, 8vw, 48px);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(desktop) {
+    font-size: clamp(52px, 5.4vw, 76px);
+  }
+}
+
 // Marcador invisible que dispara la animación de las tarjetas. Se sitúa
 // donde arranca la zona sticky, con un pequeño offset para que la entrada
 // empiece justo cuando las tarjetas asoman en pantalla.

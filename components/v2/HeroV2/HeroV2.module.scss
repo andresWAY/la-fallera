@@ -1,0 +1,270 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
+
+// Secuencia de entrada — timings ajustables a ojo, Figma no define motion.
+// Sin los interrogantes que se animaban aparte, el copy y los chevrones
+// entran antes que en la versión de campaña.
+$delay-logo: 0s;
+$delay-presents: 0s;
+$delay-title: 0.6s;
+$delay-paragraph: 1.2s;
+$delay-chevrons: 1.4s;
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background: $color-bg-dark;
+}
+
+.hero__bg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__bgMobile {
+  @include breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.hero__bgDesktop {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: block;
+  }
+}
+
+.hero__floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__floater {
+  position: absolute;
+  // Amplitud reducida en móvil: el mismo crecimiento se ve desproporcionado
+  // en pantalla estrecha.
+  --float-amp: 0.5;
+  animation: floatPulse 8s ease-in-out infinite;
+
+  @include breakpoint(desktop) {
+    --float-amp: 1;
+  }
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+// Posiciones fuera de la banda vertical del H1 (aprox. 18%-42%) para no
+// tapar el titular. Los márgenes laterales dejan holgura para el recorrido
+// horizontal de la animación, que si no recortaría los emojis en el borde.
+.hero__floater1 {
+  top: 11%;
+  left: 9%;
+  animation-delay: 0s;
+  animation-duration: 8.6s;
+}
+
+.hero__floater2 {
+  top: 48%;
+  left: 8%;
+  animation-name: floatPulseAlt;
+  animation-delay: 2.7s;
+  animation-duration: 11.3s;
+}
+
+.hero__floater3 {
+  top: 52%;
+  right: 9%;
+  animation-name: floatPulseAlt2;
+  animation-delay: 1.2s;
+  animation-duration: 9.2s;
+}
+
+.hero__floater4 {
+  top: 68%;
+  left: 14%;
+  animation-name: floatPulseAlt;
+  animation-delay: 4.6s;
+  animation-duration: 13.1s;
+}
+
+.hero__floater5 {
+  top: 12%;
+  right: 11%;
+  animation-name: floatPulseAlt2;
+  animation-delay: 6.8s;
+  animation-duration: 10.4s;
+}
+
+// Emojis extra solo en desktop: en móvil no hay espacio lateral libre y
+// recargarían la composición.
+.hero__floaterDesktop {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: block;
+  }
+}
+
+// El H1 en desktop ocupa del 23% al 40% de alto y casi todo el ancho, así
+// que estos quedan por encima y por debajo de esa banda.
+.hero__floater6 {
+  top: 14%;
+  left: 22%;
+  animation-name: floatPulseAlt;
+  animation-delay: 1.9s;
+  animation-duration: 11.8s;
+}
+
+.hero__floater7 {
+  top: 47%;
+  right: 26%;
+  animation-delay: 5.4s;
+  animation-duration: 9.7s;
+}
+
+.hero__floater8 {
+  top: 78%;
+  right: 18%;
+  animation-name: floatPulseAlt2;
+  animation-delay: 3.2s;
+  animation-duration: 13.6s;
+}
+
+.hero__floater9 {
+  top: 62%;
+  left: 26%;
+  animation-name: floatPulseAlt;
+  animation-delay: 7.5s;
+  animation-duration: 10.9s;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px 24px;
+  min-height: 100svh;
+  height: 100%;
+  justify-content: space-between;
+  gap: 24px;
+
+  @include breakpoint(desktop) {
+    padding: 96px 24px 48px;
+  }
+}
+
+.hero__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__logo {
+  animation: fadeInUp 0.6s ease-out $delay-logo both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__presents {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 15.77px;
+  line-height: 0.89em;
+  text-transform: uppercase;
+  color: $color-white;
+  margin-top: 16px;
+  animation: fadeInUp 0.6s ease-out $delay-presents both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__title {
+  font-family: $font-heading;
+  font-weight: 400;
+  color: $color-green-title;
+  font-size: clamp(42px, 19.5vw, 106px);
+  line-height: 0.95em;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  width: 90vw;
+
+  @include breakpoint(desktop) {
+    font-size: clamp(70px, 9.7vw, 194px);
+    width: 90vw;
+  }
+}
+
+.hero__line {
+  display: block;
+  animation: fadeInUp 0.6s ease-out $delay-title both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+
+  @include breakpoint(desktop) {
+    display: inline;
+  }
+}
+
+.hero__paragraph {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: clamp(12px, 3.7vw, 14px);
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: $color-text-body;
+  max-width: 360px;
+  animation: fadeInUp 0.6s ease-out $delay-paragraph both;
+
+  @include reduced-motion {
+    animation: none;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.hero__chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 32px;
+  animation:
+    fadeInUp 0.6s ease-out $delay-chevrons both,
+    bounceDouble 1.5s ease-in-out ($delay-chevrons + 0.6s) infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.hero__chevron1 {
+  width: 36px;
+}
+
+.hero__chevron2 {
+  width: 27px;
+}

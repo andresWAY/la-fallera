@@ -18,9 +18,9 @@ const inter = Inter({
 // partir de este valor.
 const SITE_URL = "https://www.lafalleraimposible.com";
 
-const TITLE = "La Paella ¿Imposible? | La Fallera";
+const TITLE = "La Paella Imposible | La Fallera";
 const DESCRIPTION =
-  "Hace 10 años conseguimos juntos el paellaemoji. ¿Y si ahora lo usamos para unir a David y Pablo?";
+  "Celebramos el 10 aniversario del PaellaEmoji convirtiéndolo en un símbolo de unión.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

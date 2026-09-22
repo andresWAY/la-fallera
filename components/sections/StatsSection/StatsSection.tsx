@@ -5,7 +5,18 @@ import Button from "@/components/ui/Button/Button";
 import { useInView } from "@/hooks/useInView";
 import styles from "./StatsSection.module.scss";
 
-export default function StatsSection() {
+type StatsSectionProps = {
+  /** Titular sobre las tarjetas. Por defecto, el de la versión de campaña. */
+  heading?: string;
+  /** Reduce el cuerpo del titular para frases largas, que al tamaño por
+   *  defecto ocupan media pantalla. */
+  longHeading?: boolean;
+};
+
+export default function StatsSection({
+  heading = "Hagamos posible la paella imposible",
+  longHeading = false,
+}: StatsSectionProps = {}) {
   const stickyRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -91,9 +102,9 @@ export default function StatsSection() {
     <section className={styles.stats}>
       <h2
         ref={headingRef}
-        className={`${styles.stats__heading} ${headingInView ? styles.stats__headingInView : ""}`}
+        className={`${styles.stats__heading} ${longHeading ? styles.stats__headingLong : ""} ${headingInView ? styles.stats__headingInView : ""}`}
       >
-        Hagamos posible la paella imposible
+        {heading}
       </h2>
 
       {/* Marcador de altura cero justo donde empieza la zona sticky: dispara

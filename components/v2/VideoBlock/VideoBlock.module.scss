@@ -1,0 +1,97 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
+
+.videoBlock {
+  position: relative;
+  width: 100%;
+  background: $color-bg-dark;
+
+  @include breakpoint(desktop) {
+    // Ajustado al alto del vídeo (90vh) más un respiro, en vez de 100vh:
+    // al centrar dentro de un contenedor de pantalla completa sobraba
+    // aire por arriba y el vídeo se despegaba del texto que lo presenta.
+    height: 94vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
+.videoBlock__floaters {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.videoBlock__floater {
+  position: absolute;
+  animation: floatPulse 8s ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.videoBlock__floater1 {
+  top: 18%;
+  left: 12%;
+  animation-delay: 0s;
+  animation-duration: 8.7s;
+}
+
+.videoBlock__floater2 {
+  top: 30%;
+  right: 14%;
+  animation-name: floatPulseAlt;
+  animation-delay: 4.3s;
+  animation-duration: 12.2s;
+}
+
+.videoBlock__floater3 {
+  bottom: 16%;
+  left: 20%;
+  animation-name: floatPulseAlt2;
+  animation-delay: 2.1s;
+  animation-duration: 10.6s;
+}
+
+.videoBlock__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+
+  @include breakpoint(desktop) {
+    width: auto;
+    height: 90vh;
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+  }
+}
+
+.videoBlock__poster {
+  object-fit: cover;
+}
+
+.videoBlock__playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.videoBlock__video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}

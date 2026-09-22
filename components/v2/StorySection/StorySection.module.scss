@@ -1,0 +1,146 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/animations";
+
+$delay-heading: 0s;
+$delay-body: 0.4s;
+
+.story {
+  position: relative;
+  background: $color-bg-dark;
+  // El padding inferior es menor que el superior: cada bloque de texto
+  // introduce el vídeo que va justo debajo, y con el padding simétrico
+  // quedaban demasiado despegados como para leerse como una unidad.
+  padding: 72px 24px 32px;
+  overflow: hidden;
+
+  @include breakpoint(desktop) {
+    padding: 120px 24px 48px;
+  }
+}
+
+.story__floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.story__floater {
+  position: absolute;
+  // Amplitud contenida: con el recorrido completo la animación arrastra los
+  // emojis hasta 52px y los agranda un 40%, lo suficiente para que acaben
+  // invadiendo el texto por mucho que se posicionen en las esquinas.
+  --float-amp: 0.35;
+  animation: floatPulse 9s ease-in-out infinite;
+
+  @include breakpoint(desktop) {
+    --float-amp: 0.6;
+  }
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+// Los emojis se reparten por las esquinas, fuera de la banda vertical que
+// ocupa el texto (aprox. 20%-80% del alto): antes uno caía sobre el párrafo
+// y, con el recorrido de la animación encima, estorbaba la lectura.
+.story__floater1 {
+  top: 6%;
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 9.4s;
+}
+
+.story__floater2 {
+  bottom: 6%;
+  right: 6%;
+  animation-name: floatPulseAlt;
+  animation-delay: 3.1s;
+  animation-duration: 12.5s;
+}
+
+// En móvil el texto ocupa casi todo el ancho, así que este tercer emoji
+// solo aparece en desktop, donde el contenido está limitado a 900px y sí
+// queda aire libre en el lateral.
+.story__floater3 {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: block;
+    top: 18%;
+    right: 9%;
+    animation-name: floatPulseAlt2;
+    animation-delay: 5.6s;
+    animation-duration: 10.8s;
+  }
+}
+
+.story__content {
+  position: relative;
+  // Por encima de los emojis: si alguno se cruza en el recorrido de su
+  // animación, el texto se sigue leyendo por delante.
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.story__heading {
+  font-family: $font-heading;
+  font-weight: 400;
+  color: $color-green-title;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 0.95em;
+  text-transform: uppercase;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: clamp(52px, 5.4vw, 76px);
+  }
+
+  .story__inView & {
+    animation: fadeInUp 0.6s ease-out $delay-heading both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
+}
+
+.story__body {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45em;
+  letter-spacing: -0.02em;
+  color: $color-text-body;
+  max-width: 480px;
+  margin-top: 24px;
+  opacity: 0;
+
+  @include reduced-motion {
+    opacity: 1;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: 16px;
+    max-width: 620px;
+  }
+
+  .story__inView & {
+    animation: fadeInUp 0.6s ease-out $delay-body both;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
+}
