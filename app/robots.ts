@@ -1,8 +1,6 @@
 import type { MetadataRoute } from "next";
 
-// TODO: mantener sincronizado con SITE_URL de app/layout.tsx cuando se
-// confirme el dominio de producción.
-const SITE_URL = "https://www.lafalleraimposible.com";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {

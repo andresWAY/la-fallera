@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.scss";
 
 const bebasNeue = Bebas_Neue({
@@ -12,11 +13,6 @@ const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
 });
-
-// TODO: sustituir por el dominio de producción real en cuanto se confirme.
-// Todas las URLs absolutas (OG image, canonical, sitemap) se calculan a
-// partir de este valor.
-const SITE_URL = "https://www.lafalleraimposible.com";
 
 const TITLE = "La Paella Imposible | La Fallera";
 const DESCRIPTION =
