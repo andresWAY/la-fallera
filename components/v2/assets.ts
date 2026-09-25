@@ -28,6 +28,6 @@ export const VIDEOS = {
   resolucion: {
     src: "/video/resolucion.mp4",
     poster: "/images/video/portada-resolucion.webp",
-    posterAlt: "Eugeni hablando a cámara",
+    posterAlt: "Repartidor del PaellaEmoji Express con su casco",
   },
 } as const;

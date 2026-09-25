@@ -41,7 +41,7 @@ export default function Home() {
         longHeading
       />
 
-      <Footer />
+      <Footer note="El emoji de la paella es el único de origen español y el primero aceptado por petición popular e impulsado por una marca. En 2016 unió internet y diez años después, lo hemos convertido en un símbolo de unión." />
     </main>
   );
 }

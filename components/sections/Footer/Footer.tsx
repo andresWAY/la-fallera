@@ -4,7 +4,13 @@ import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
 import styles from "./Footer.module.scss";
 
-export default function Footer() {
+type FooterProps = {
+  /** Texto bajo el PaellaEmoji. Solo lo usa la versión de cierre: en la de
+   *  campaña el emoji todavía no era un símbolo de unión. */
+  note?: string;
+};
+
+export default function Footer({ note }: FooterProps = {}) {
   const { ref, isInView } = useInView<HTMLElement>();
 
   return (
@@ -56,6 +62,8 @@ export default function Footer() {
           height={160}
           className={styles.footer__image}
         />
+
+        {note && <p className={styles.footer__note}>{note}</p>}
       </div>
     </footer>
   );
